@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     background-color: #ffffff;
     overflow: hidden;
-    border: 3px solid black;
+    border: 3px solid #831843;
 }
 
 .chat-header {
@@ -26,16 +26,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #831843;
     font-weight: 600;
 }
 
-.status-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #f472b6;
-    border-radius: 50%;
-}
 
 #chat-messages {
     flex: 1;
@@ -74,7 +68,7 @@ body {
 .bottom-screen {
     padding: 15px;
     background-color: white;
-    border-top: 3px solid black;
+    border-top: 3px solid #831843;
 }
 
 #chat-form {

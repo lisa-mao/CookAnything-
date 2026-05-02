@@ -4,19 +4,16 @@ import cors from 'cors'
 
 const app = express()
 app.use(express.json())
-
 app.use(cors());
 app.use(express.static("public"));
 
-
 app.get('/api/test', async (req, res) => {
     try {
-        const response = await callAssistant("Can you think of a recipe that i can make with tomatoes, eggs and rice?")
+        const response = await callAssistant("Kun je een recept bedenken dat ik kan maken met tomaten, eieren en rijst?")
         res.json({response})
     } catch (error) {
         res.status(500).json({error: error.message})
     }
-
 })
 
 app.post('/api/chat', async (req, res) => {
@@ -36,7 +33,6 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-app.use(express.static("public"));
 app.get("/", (req, res) => {
     res.sendFile("public/index.html", {root: "."});
 });

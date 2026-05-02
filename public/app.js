@@ -39,20 +39,26 @@ chatForm.addEventListener('submit', async (e) => {
 
         const data = await response.json();
 
-const markdownText =
-    `# ${data.recipeName}, 
-### Ingredients: ${data.ingredients.join(', ')}, 
-### Instructions: ${data.instructions}, 
-### Difficulty: ${data.difficulty}`
+        const markdownText = `
+# ${data.recipeName}
+### Ingrediënten: 
+${data.ingredients.join(', ')}
 
-        addMessage(markdownText,  'server');
+### Instructies: 
+${data.instructions}
+
+### Moeilijkheidsgraad: 
+${data.difficulty}`;
+
+        addMessage(markdownText, 'server');
 
     } catch (error) {
         console.error('Error fetching from server:', error);
-        addMessage('Sorry, something went wrong.', 'server');
+
+        addMessage('Sorry, er is iets misgegaan. Probeer het later opnieuw.', 'server');
     } finally {
         submitButton.disabled = false;
-        submitButton.innerHTML = "Submit"
+        submitButton.innerHTML = "Verstuur"
         chatInput.focus();
     }
 });
